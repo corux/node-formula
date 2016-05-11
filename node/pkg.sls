@@ -17,6 +17,14 @@ nodejs.ppa:
     - require_in:
       pkg: node
 {%- endif %}
+
+{%- if grains['os_family'] in ['RedHat'] and salt['pillar.get']('node:install_from_repo') %}
+nodejs-repo:
+  pkg.installed:
+    - sources:
+      - nodesource-release: https://rpm.nodesource.com/pub_{{ salt['pillar.get']('node:version', '6') | first }}.x/el/7/x86_64/nodesource-release-el7-1.noarch.rpm
+{%- endif %}
+
 nodejs:
   pkg.installed:
     - name: {{ node.node_pkg }}

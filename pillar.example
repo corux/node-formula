@@ -11,9 +11,14 @@ node:
   install_from_binary: True
   checksum: f037e2734f52b9de63e6d4a4e80756477b843e6f106e0be05591a16b71ec2bd0
 
-# Install from PPA:
+# Install from PPA repository:
 node:
   version: 5.4.0
   install_from_ppa: True
   ppa:
     repository_url: https://deb.nodesource.com/node_5.x
+
+# Install from YUM repository:
+node:
+  version: 5.4.0
+  install_from_repo: True
