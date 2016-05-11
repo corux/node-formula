@@ -1,0 +1,26 @@
+driver:
+  name: docker
+
+platforms:
+  - name: centos-7
+    driver_config:
+      image: corux/centos7-salt
+
+provisioner:
+  name: salt_solo
+  formula: node
+  pillars:
+    top.sls:
+      base:
+        "*":
+          - node
+    node.sls:
+      node:
+        install_from_repo: True
+  state_top:
+    base:
+      "*":
+        - node
+
+suites:
+  - name: default

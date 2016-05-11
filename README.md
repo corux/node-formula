@@ -1,5 +1,7 @@
 # node
 
+[![Build Status](https://travis-ci.org/corux/node-formula.svg?branch=master)](https://travis-ci.org/corux/node-formula)
+
 This formula installs [node.js](https://nodejs.org/en/).
 
 ## Installing from source
